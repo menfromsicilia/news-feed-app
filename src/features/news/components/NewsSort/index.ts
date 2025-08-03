@@ -1,0 +1,1 @@
+export { NewsSort } from './NewsSort';

@@ -1,0 +1,33 @@
+.app {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0;
+  text-align: left;
+}
+
+@media (min-width: 1200px) {
+    #root {
+    min-width: 1200px;
+  }
+}
+
+@media (max-width: 1199px) {
+  #root {
+    width: 100%;
+  }
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}

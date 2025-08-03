@@ -1,0 +1,1 @@
+export { NewsSearch } from './NewsSearch';
