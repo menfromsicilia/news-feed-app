@@ -21,7 +21,6 @@ export const newsApi = createApi({
                         sortBy,
                         order,
                         select,
-                        selectedTags = [],
                         limit = 10,
                         skip = 0,
                     }: NewsSearchParams = {}) => {

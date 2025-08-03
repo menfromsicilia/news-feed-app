@@ -27,7 +27,6 @@ export interface NewsSearchParams {
   sortBy?: 'title' | 'id' | 'userId' | 'views';
   order?: 'asc' | 'desc';
   select?: string;
-  selectedTags?: string[]; 
 }
 
 export interface NewsFilters {

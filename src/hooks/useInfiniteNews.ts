@@ -38,7 +38,6 @@ export const useInfiniteNews = (): UseInfiniteNewsResult => {
         q: filters.search || undefined,
         sortBy: filters.sortBy,
         order: filters.sortOrder,
-        selectedTags: filters.selectedTags,
         limit: shouldLoadAll ? 100 : 10,
         skip: shouldLoadAll ? 0 : infiniteScroll.skip,
       };
@@ -48,8 +47,9 @@ export const useInfiniteNews = (): UseInfiniteNewsResult => {
       if (shouldLoadAll) {
         dispatch(resetInfiniteScroll());
         dispatch(appendPosts(result));
-        dispatch(setHasMore(false)); 
+        dispatch(setHasMore(false));
       } else {
+
         dispatch(appendPosts(result));
         if (result.length < 10) {
           dispatch(setHasMore(false));
