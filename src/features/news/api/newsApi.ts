@@ -49,18 +49,8 @@ export const newsApi = createApi({
                     url: `/posts?${params.toString()}`,
                 };
             },
-            transformResponse: (response: NewsApiResponse, _meta, arg): NewsPost[] => {
-                const { selectedTags = [] } = arg;
-                
+            transformResponse: (response: NewsApiResponse): NewsPost[] => {
                 let filteredPosts = response.posts;
-                
-                if (selectedTags.length > 0) {
-                    filteredPosts = response.posts.filter(post => 
-                        selectedTags.some(selectedTag => 
-                            post.tags.includes(selectedTag)
-                        )
-                    );
-                }
                 
                 return filteredPosts;
             },
@@ -75,7 +65,7 @@ export const newsApi = createApi({
 
         getNewsPostById: builder.query<NewsPost, number>({
             query: id => `/posts/${id}`,
-            providesTags: (result, error, id) => [{ type: 'News', id }],
+            providesTags: () => ['News'],
         }),
 
         getAllUniqueTags: builder.query<string[], void>({

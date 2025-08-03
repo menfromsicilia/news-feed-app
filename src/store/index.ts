@@ -12,7 +12,8 @@ export const store = configureStore({
     middleware: getDefaultMiddleware =>
         getDefaultMiddleware({
             serializableCheck: {
-                ignoredActions: [newsApi.util.getRunningQueriesThunk.type],
+                ignoredActionsPaths: ['meta.arg', 'payload.timestamp'],
+                ignoredPaths: [newsApi.reducerPath],
             },
         }).concat(newsApi.middleware),
 });

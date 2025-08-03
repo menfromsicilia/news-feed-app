@@ -5,8 +5,7 @@ import { FilterOutlined, ClearOutlined } from '@ant-design/icons';
 import { useAppSelector, useAppDispatch } from '@/hooks/redux';
 import { 
   removeTag, 
-  setSelectedTags, 
-  resetFilters 
+  setSelectedTags
 } from '@/features/news/store/newsFiltersSlice';
 import styles from './NewsFilters.module.css';
 
